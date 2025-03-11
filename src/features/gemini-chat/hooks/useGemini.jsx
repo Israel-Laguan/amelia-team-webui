@@ -7,26 +7,26 @@ export default function useGemini() {
 
   function checkForMessages() {
     const savedMessages = localStorage.getItem("messages");
-    return savedMessages
-      ? JSON.parse(savedMessages)
-      : [
-          {
-            role: "user",
-            parts: [
-              {
-                text: "",
-              },
-            ],
-          },
-          {
-            role: "model",
-            parts: [
-              {
-                text: "¡Hola! Soy Amelia, un chatbot. Estoy aquí para ayudarte a crear una cotización para tu chat bot. Por favor, dime más sobre tus necesidades y requerimientos para que pueda ofrecerte una cotización adecuada. ¿Qué tipo de Chatbot te gustaría desarrollar? ¿Tienes alguna idea de las funcionalidades que debería tener?",
-              },
-            ],
-          },
-        ];
+		return savedMessages
+			? JSON.parse(savedMessages)
+			: [
+				{
+				role: "user",
+				parts: [
+					{
+					text: "",
+					},
+				],
+				},
+				{
+				role: "model",
+				parts: [
+					{
+					text: "Hello! I'm Amelia, a chatbot. I'm here to help you create a quote for your chatbot. Please tell me more about your needs and requirements so I can offer you an appropriate quote. What kind of chatbot would you like to develop? Do you have any ideas about the functionalities it should have?",
+					},
+				],
+				},
+			];
   }
 
   useEffect(() => {
@@ -57,17 +57,17 @@ export default function useGemini() {
         });
       }
     } catch (error) {
-      updateMessage([
-        ...messages,
-        {
-          role: "model",
-          parts: [
-            {
-              text: "Parece que tengo problemas para conectarme a los servidores.",
-            },
-          ],
-        },
-      ]);
+			updateMessage([
+				...messages,
+				{
+					role: "model",
+					parts: [
+				{
+					text: "It seems I am having trouble connecting to the servers.",
+				},
+					],
+				},
+			]);
       console.error("An error occurred:", error);
     } finally {
       setLoading(false);
