@@ -109,6 +109,7 @@ const Introduction = () => {
 
 const RenderMessage = ({ message, msgIndex, loading, messageLength}) => {
 	const { parts, role } = message;
+	console.log({message})
 
 	const Loader = () =>
 		msgIndex === messageLength - 1 &&
