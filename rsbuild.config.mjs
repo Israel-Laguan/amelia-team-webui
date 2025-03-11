@@ -15,13 +15,12 @@ export default defineConfig({
       plugins: [
         isDev
           ? new EnvironmentPlugin([
-              "NODE_ENV",
               "DEBUG",
               "GEMINI_AI_API_KEY",
               "AMELIA_SYSTEM_PROMPT",
             ])
           : new EnvironmentPlugin({
-              NODE_ENV: "development",
+              NODE_ENV: "production",
               DEBUG: "false",
               GEMINI_AI_API_KEY:
                 JSON.stringify(process.env.GEMINI_AI_API_KEY) || "",
