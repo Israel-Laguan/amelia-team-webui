@@ -2,7 +2,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 import { config } from "../../../config";
 
 const GeminiService = (() => {
-	const MODEL_NAME = "gemini-1.5-flash";
+	const MODEL_NAME = "gemini-2.0-pro-exp-02-05";
 	const API_KEY = config.API_KEY;
 	const systemInstruction =
 		config.AMELIA_PROMPT ||
