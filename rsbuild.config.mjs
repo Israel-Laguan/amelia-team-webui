@@ -114,4 +114,7 @@ export default defineConfig({
       new SwcCssMinimizerRspackPlugin(),
     ],
   },
+	html: {
+		title: "Amelia Chat",
+	}
 });
